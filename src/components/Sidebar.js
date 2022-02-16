@@ -17,14 +17,14 @@ const Sidebar = () => {
                     <SideNav.Toggle />
                     <SideNav.Nav>
 
-                            <NavItem eventKey="">
-                                <NavIcon>
-                                    <Link to='/'><i><Aave size="32" color="#FF8A65"/></i></Link>
-                                </NavIcon>
-                                <NavText>
-                                    <Link to='/'>Home</Link>
-                                </NavText>
-                            </NavItem>
+                        <NavItem eventKey="">
+                            <NavIcon>
+                                <Link to='/'><i><Aave size="32" color="#FF8A65"/></i></Link>
+                            </NavIcon>
+                            <NavText>
+                                <Link to='/'>Home</Link>
+                            </NavText>
+                        </NavItem>
                         
                         <NavItem eventKey="alphabet">
                             <NavIcon>
@@ -46,13 +46,13 @@ const Sidebar = () => {
 
                     </SideNav.Nav>
                 </SideNav>
-                
+
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/alphabet" element={<Letters />} />
                     <Route path="/speech" element={<Speech />} />
                 </Routes>
-                
+
             </React.Fragment>
         </Router>
     </>
