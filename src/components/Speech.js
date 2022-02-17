@@ -1,27 +1,23 @@
-import React from "react";
+import React, { useState } from 'react';
 import { useSpeechSynthesis } from "react-speech-kit";
 
-const Speech = () => {
-const [value, setValue] = React.useState("");
-const { speak } = useSpeechSynthesis();
-return (
-    <div className="speech">
-    <div className="group">
-        <h2>Text To Speech Converter Using React Js</h2>
-    </div>
-    <div className="group">
-        <textarea
-        rows="10"
+
+const  Speech = () => {
+  const [value, setValue] = useState('');
+  const { speak } = useSpeechSynthesis();
+
+  return ( 
+    <div className="container">
+      <textarea
+        style={{fontSize: 30, letterSpacing: 1.5, wordSpacing: '0.5em'}}
+        rows="9"
+        className="form-control"
         value={value}
-        onChange={(e) => setValue(e.target.value)}
-        ></textarea>
+        onChange={(event) => setValue(event.target.value)}
+      />
+      <button className="btn btn-primary btn-lg btn-block" onClick={() => speak({ text: value })}>Speak</button>
     </div>
-    <div className="group">
-        <button onClick={() => speak({ text: value })}>
-        Speech
-        </button>
-    </div>
-    </div>
-);
-};
+  );
+}
+
 export default Speech;
